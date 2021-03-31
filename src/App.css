@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --red: rgb(243, 160, 160);
+  --violet: rgb(226, 160, 243);
+  --orange: rgb(243, 210, 160);
+  --blue: rgb(160, 217, 243);
+  --green: rgb(160, 243, 164);
+  --grey: rgb(46, 46, 46);
+}
+
+*::-webkit-scrollbar {
+  /* top: 10%; */
+  width: 0.2rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--grey);
+}
+
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+*::-webkit-scrollbar-track-piece:start {
+  background: transparent;
+  margin-top: 20px;
+}
+*::-webkit-scrollbar-track-piece:end {
+  /* background: black; */
+  margin-bottom: 20%;
+}
+
+nav {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 0px 10px black;
+}
+
+.title {
+  margin: 2rem 0 0 calc(60px + 2rem);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.search {
+  padding: 0.2rem 1rem;
+  border: 0.01rem solid black;
+  border-radius: 1.2rem;
+  width: 20%;
+  margin-left: calc(60px + 2rem);
+  /* border: 0; */
+  outline: 0;
+}
+
+.dock {
+  height: calc(100vh - 70px);
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+}
+
+.newButton {
+  height: 2rem;
+  width: 2rem;
+  background-color: black;
+  border-radius: 50%;
+  transition: all 0.4s;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: all 0.5s;
+  z-index: 102;
+}
+
+.newButton:hover {
+  transform: rotate(180deg);
+}
+
+.colorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 20px;
+  width: 20px;
+  transition: all 0.5s cubic-bezier(0.9, 0.23, 0.61, 1.67);
+  margin-top: -1rem;
+}
+
+.newNoteColor {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  z-index: 101;
+  margin-top: 0rem;
+  position: absolute;
+  transition: all 500ms cubic-bezier(0.9, 0.23, 0.61, 1.67);
+}
+
+.redNote {
+  background-color: var(--red);
+}
+.blueNote {
+  background-color: var(--blue);
+}
+.greenNote {
+  background-color: var(--green);
+}
+.violetNote {
+  background-color: var(--violet);
+}
+.orangeNote {
+  background-color: var(--orange);
+}
+
+.noteOverlayGrid {
+  z-index: 105;
+  position: absolute;
+  /* background-color: black; */
+  pointer-events: none;
+  height: 100vh;
+  width: 100vw;
+  overflow: visible;
+}
+
+.grid {
+  position: relative;
+  height: 80vh;
+  margin: 2rem 2rem 0 calc(60px + 2rem);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, 300px);
+}
+
+.note {
+  position: absolute;
+  z-index: 109;
+  height: 200px;
+  width: 300px;
+  border-radius: 1rem;
+  transform: scale(0, 0);
+  /* background-color: grey; */
+  transition: all 1s cubic-bezier(1, 0.6, 0.87, 1.1), top 1.2s ease-out,
+    left 1.4s ease-out;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.gridNote {
+  z-index: 90;
+  width: 300px;
+  height: 200px;
+  border-radius: 1rem;
+}
+
+.noteTitle {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.noteText {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  height: calc(200px - 5rem);
+
+  width: calc(300px - 2rem);
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    text-align: center;
+
+    font-size: 1.5rem;
+  }
+  .dock {
+    padding-top: 2rem;
+  }
+  .note {
+    height: 40vh;
+    width: 50%;
+  }
+  .search {
+    margin: auto;
+    width: 80%;
+  }
+  .noteTitle {
+    font-size: 0.8rem;
+  }
+
+  .noteText {
+    font-size: 0.5rem;
+  }
+}
