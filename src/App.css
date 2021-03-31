@@ -181,15 +181,12 @@ nav {
 }
 
 @media screen and (max-width: 600px) {
-  .title {
-    text-align: center;
-  }
   .dock {
     padding-top: 2rem;
   }
   .note {
-    height: 40vh;
-    width: 25%;
+    height: 25%;
+    width: 50%;
   }
   .search {
     margin: auto;
