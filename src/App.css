@@ -185,7 +185,6 @@ nav {
     padding-top: 2rem;
   }
   .note {
-    height: 25%;
     width: 50%;
   }
   .search {
@@ -193,10 +192,10 @@ nav {
     width: 80%;
   }
   .noteTitle {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
 
   .noteText {
-    font-size: 0.5rem;
+    font-size: 1rem;
   }
 }
